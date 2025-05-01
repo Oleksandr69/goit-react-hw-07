@@ -1,0 +1,22 @@
+.item {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-between;
+
+  width: 360px;
+}
+
+.btn {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.text {
+  font-size: 18px;
+  margin: 0;
+  text-align: start;
+}
