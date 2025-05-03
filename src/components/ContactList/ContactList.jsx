@@ -4,10 +4,11 @@ import { useSelector } from 'react-redux';
 
 const ContactList = () => {
 
-    const contact = useSelector((state) => state.contacts.items);
+    const contact = useSelector((state) => state.contacts.contacts);
     const searchName = useSelector((state) => state.filters.name);
+    const error = useSelector((state) => state.contacts.error);
 
-    // console.log(contact, searchName);  
+    console.log(contact, searchName);  
    
     return <ul className={css.list}>
         {contact.map((card) => {
@@ -21,6 +22,7 @@ const ContactList = () => {
             }
         
         })}
+        {error && <h2>Server is dead...</h2>}
     </ul>;
 };
 
