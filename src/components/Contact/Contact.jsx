@@ -1,12 +1,12 @@
 import css from './Contact.module.css';
 import { FaUser, FaPhoneAlt } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
-import { deleteContactThunk } from '../../redux/contactsOps';
+import { deleteContact } from '../../redux/contactsOps';
 
 export default function Contact({ contact }) {
   
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContactThunk(contact.id));
+  const handleDelete = () => dispatch(deleteContact(contact.id));
 
   return (
     <div className={css.item}>

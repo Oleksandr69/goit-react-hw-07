@@ -6,16 +6,17 @@ import { useDispatch, useSelector } from "react-redux";
 import ContactForm from '../ContactForm/ContactForm';
 import SearchBox from '../SearchBox/SearchBox';
 import ContactList from '../ContactList/ContactList';
-import { fetchContactsThunk } from '../../redux/contactsOps';
+import { fetchContacts } from '../../redux/contactsOps';
+import { selectError, selectLoading } from '../../redux/contactsSlice';
 
 const App = () => {
 
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.contacts.isLoading);
-  const error = useSelector((state) => state.contacts.error);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
     useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
       return (
@@ -26,7 +27,7 @@ const App = () => {
         <SearchBox
           />
 
-        {isLoading && !error && <b>Request in progress...</b>}
+        {loading && !error && <b>Request in progress...</b>}
           
         <ContactList
           />
