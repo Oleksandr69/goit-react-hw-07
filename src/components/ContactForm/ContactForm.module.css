@@ -3,6 +3,7 @@
   border: 2px solid grey;
   margin: 0 auto;
   margin-bottom: 16px;
+  background: rgb(225, 245, 245);
 }
 
 .field {
@@ -19,7 +20,7 @@
 .button {
   font-size: 18px;
   border: 2px solid grey;
-  background: rgb(64, 109, 231);
+  background: rgb(59, 93, 243);
   border-radius: 14px;
   margin-bottom: 14px;
   color: aliceblue;

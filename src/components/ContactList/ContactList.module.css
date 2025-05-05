@@ -8,6 +8,10 @@
   justify-content: start;
 }
 
+.list h3 {
+  margin: 0 auto;
+}
+
 .cardItem {
   display: flex;
   flex-direction: row;

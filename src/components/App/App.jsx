@@ -7,12 +7,13 @@ import ContactForm from '../ContactForm/ContactForm';
 import SearchBox from '../SearchBox/SearchBox';
 import ContactList from '../ContactList/ContactList';
 import { fetchContacts } from '../../redux/contactsOps';
-import { selectError, selectLoading } from '../../redux/contactsSlice';
+import { selectError, selectLoadingApp } from '../../redux/contactsSlice';
+import Loader from '../Loader/Loader';
 
 const App = () => {
 
   const dispatch = useDispatch();
-  const loading = useSelector(selectLoading);
+  const loadingApp = useSelector(selectLoadingApp);
   const error = useSelector(selectError);
 
     useEffect(() => {
@@ -27,7 +28,7 @@ const App = () => {
         <SearchBox
           />
 
-        {loading && !error && <b>Request in progress...</b>}
+          {loadingApp && !error && <b>Request in progress...<Loader color='green' loader={loadingApp} /></b>}
           
         <ContactList
           />
